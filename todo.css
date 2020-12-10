@@ -42,13 +42,13 @@ body {
 }
 input {
     border: solid 1px gray;
-    padding-left: 10px;  
+    padding-left: 12px;  
     width: 400px;
     height: 41px;
     border-radius: 3px;
 }
 .add-todo{
-        background-color: rgb(204, 204, 204);
+    background-color: rgb(204, 204, 204);
     font-size: 1.8rem;
     color: white;
     border: solid 1px gray;
@@ -73,16 +73,23 @@ input {
     border-radius: 3px;
 }
 .todo-item .delete-button {
-    display: none;
+    display: inline-block;
+    border: solid 1px rgb(223, 232, 244);
+    border-radius: 4px;
+    float: right;
+    background-color: rgb(223, 232, 244);
+    color: rgb(223, 232, 244);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 35px;
+    height: 31px;
+    position: relative;
+    top: -8px;
+    right: -4px;
+    transition: all 0.7s;
 }
 .todo-item:hover .delete-button {
-    display: inline-block;
-    border: solid 1px gray;
-    padding: .3rem, .5rem;
-    border-radius: 2px;
-    float: right;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    font-size: .8rem;
+    border: solid 1px rgb(245, 5, 5);
+    background-color: rgb(245, 5, 5);
+    
 }
