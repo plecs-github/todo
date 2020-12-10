@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+html {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.main-container {
+    width: 50vw;
+    background-color:rgb(233, 232, 232);
+    border: solid 1px black;
+}
+.container {
+    padding: 1.5rem;
+}
