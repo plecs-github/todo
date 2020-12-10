@@ -3,7 +3,8 @@
     padding: 0;
 }
 html {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(93, 90, 97);
 }
 body {
     display: flex;
@@ -11,12 +12,77 @@ body {
     height: 100vh;
     align-items: center;
     justify-content: center;
+
 }
 .main-container {
-    width: 50vw;
-    background-color:rgb(233, 232, 232);
+    width: 500px;
+    background-color:rgb(244, 247, 252);
     border: solid 1px black;
 }
 .container {
     padding: 1.5rem;
+    font-size: .8rem;
+}
+.day {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 5px rgb(189, 186, 186);
+    text-transform: uppercase ;
+    margin-bottom: .5rem;
+    color: rgb(121, 47, 47);
+} 
+
+.date {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgb(121, 47, 47);
+    text-shadow: 3px 3px 5px rgb(189, 186, 186);
+}
+input {
+    border: solid 1px gray;
+    padding-left: 10px;  
+    width: 400px;
+    height: 41px;
+    border-radius: 3px;
+}
+.add-todo{
+        background-color: rgb(204, 204, 204);
+    font-size: 1.8rem;
+    color: white;
+    border: solid 1px gray;
+    padding: .3rem, 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    float: right;
+    cursor: pointer;
+}
+.add-todo:hover{
+    background-color: rgb(93, 90, 97);
+}
+.pendingItems {
+    padding-left: 1.8rem;
+    font-size: .9rem;
+}
+.todo-item {
+    background-color: rgb(223, 232, 244);
+    margin-bottom: .4rem;
+    padding: .5rem .3rem .5rem 1rem;
+    border-radius: 3px;
+}
+.todo-item .delete-button {
+    display: none;
+}
+.todo-item:hover .delete-button {
+    display: inline-block;
+    border: solid 1px gray;
+    padding: .3rem, .5rem;
+    border-radius: 2px;
+    float: right;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-size: .8rem;
 }

@@ -3,6 +3,7 @@
 const todoInput = document.querySelector('.todo-input');
 const addTodoButton = document.querySelector('.add-todo');
 const todoContainer = document.querySelector('.todo-container');
+
 let storageId = 1;
 
 const deleteStorage = (id) => {
@@ -21,7 +22,6 @@ const addTodo = () => {
       todoContainer.insertBefore(todoItem, todoContainer.firstChild);
       localStorage.setItem(storageId.toString(), todoInput.value);
       addDeleteEventListener (storageId);
-      
       todoInput.value = '';
       storageId +=1; 
    }
@@ -45,3 +45,11 @@ const days = ['Vasárnap', 'Hátfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek
 const dayName = days[date.getDay()];
 document.querySelector('.date').innerHTML = date.toLocaleDateString('hu', {year: 'numeric', month: 'long', day: 'numeric'});
 document.querySelector('.day').innerHTML = days[date.getDay()];;
+
+/* pending items */
+const pendingItems = document.querySelector('.pendingItems span')
+const updatePendingItems = () => {pendingItems.innerHTML = localStorage.length,
+   setTimeout(updatePendingItems, 100);
+ }
+ updatePendingItems()
+
