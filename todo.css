@@ -12,7 +12,6 @@ body {
     height: 100vh;
     align-items: center;
     justify-content: center;
-
 }
 .main-container {
     width: 500px;
@@ -32,7 +31,6 @@ body {
     margin-bottom: .5rem;
     color: rgb(121, 47, 47);
 } 
-
 .date {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5rem;
@@ -80,8 +78,11 @@ body {
     text-decoration: line-through;
     color: rgb(146, 140, 140);
 }
-.completed-container .delete-button {
- 
+.hidden {
+    display: none;
+}
+.completed-container .todo-item .delete-button{
+    display: none;
 }
 .todo-item .delete-button {
     display: inline-block;
@@ -103,5 +104,15 @@ body {
     border: solid 1px rgb(245, 5, 5);
     background-color: rgb(245, 5, 5);
 }
-
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.controlBtn {
+height: 25px;
+width: 150px;
+margin: 10px;
+}
 
