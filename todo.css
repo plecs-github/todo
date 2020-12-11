@@ -40,7 +40,7 @@ body {
     color: rgb(121, 47, 47);
     text-shadow: 3px 3px 5px rgb(189, 186, 186);
 }
-input {
+.todo-input {
     border: solid 1px gray;
     padding-left: 12px;  
     width: 400px;
@@ -48,7 +48,7 @@ input {
     border-radius: 3px;
 }
 .add-todo{
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(93, 90, 97);
     font-size: 1.8rem;
     color: white;
     border: solid 1px gray;
@@ -60,7 +60,7 @@ input {
     cursor: pointer;
 }
 .add-todo:hover{
-    background-color: rgb(93, 90, 97);
+    background-color: rgb(121, 121, 194);
 }
 .pendingItems {
     padding-left: 1.8rem;
@@ -91,5 +91,7 @@ input {
 .todo-item:hover .delete-button {
     border: solid 1px rgb(245, 5, 5);
     background-color: rgb(245, 5, 5);
+}
+.todo-item .set-completed {
     
 }
