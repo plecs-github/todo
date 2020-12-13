@@ -7,18 +7,24 @@ const pendingItems = document.querySelector('.pendingItems span')
 const showCompletedItems = document.querySelector('.completedItems span')
 const showHideButton = document.querySelector('.show-hide');
 const clearAllButton = document.querySelector('.clear-all');
+const chill = document.querySelector('.chill');
 let todoCounter = 0;
 let storageId = 1;
 
+
+
 const counterUpdater = (plus) => {
    if (plus) todoCounter += 1;
-   else todoCounter -= 1;
-   pendingItems.innerHTML = todoCounter;
+   else todoCounter -= 1; {
+      if (todoCounter === 1) pendingItems.innerHTML = `You have just ${todoCounter} pending item`;
+      else if (todoCounter===0) pendingItems.innerHTML =`You don'have any pending items, so it's <b style="color:red">time to chill...</b>.`;
+      else pendingItems.innerHTML = `You have ${todoCounter} pending items`;
+   }
 }
 
 const counterReset = () => {
-   todoCounter = 0; 
-   pendingItems.innerHTML = todoCounter;
+   todoCounter = 0;
+   pendingItems.innerHTML = `You don'have any pending items, so it's <b style="color:red">time to chill...</b>.`;
 }
 
 const deleteStorage = (id) => {
@@ -101,12 +107,12 @@ const setShowHide = () => {
 
 const clearAll = () => {
    Object.keys(localStorage).forEach((key) => {
-       const obj = JSON.parse(localStorage.getItem(key));
-       if (parseInt(obj.state) === 1) {
-           localStorage.removeItem(key);
-           document.querySelector(`[data-setid="${key}"]`).parentElement.remove();
-           counterReset();
-       }
+      const obj = JSON.parse(localStorage.getItem(key));
+      if (parseInt(obj.state) === 1) {
+         localStorage.removeItem(key);
+         document.querySelector(`[data-setid="${key}"]`).parentElement.remove();
+         counterReset();
+      }
    });
 }
 
@@ -131,9 +137,9 @@ document.querySelector('.day').innerHTML = days[date.getDay()];;
 /* Displaying completed items */
 
 let completedItemsUpdate = () => {
-  const completedItems = (1-(todoCounter/localStorage.length));
-  showCompletedItems.innerHTML = (`${Math.round(completedItems*100)}%`)
-  setTimeout (completedItemsUpdate, 300)
- };
+   const completedItems = (1 - (todoCounter / localStorage.length));
+   showCompletedItems.innerHTML = (`${Math.round(completedItems * 100)}%`)
+   setTimeout(completedItemsUpdate, 300)
+};
 
 completedItemsUpdate()
