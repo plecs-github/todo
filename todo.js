@@ -14,17 +14,19 @@ let storageId = 1;
 
 
 const counterUpdater = (plus) => {
+   chill.setAttribute("class", "hidden");
    if (plus) todoCounter += 1;
    else todoCounter -= 1; {
-      if (todoCounter === 1) pendingItems.innerHTML = `You have just ${todoCounter} pending item`;
-      else if (todoCounter===0) pendingItems.innerHTML =`You don'have any pending items, so it's <b style="color:red">time to chill...</b>.`;
-      else pendingItems.innerHTML = `You have ${todoCounter} pending items`;
+      if (todoCounter > 1) pendingItems.innerHTML = `You have ${todoCounter} pending items`;
+      else if (todoCounter === 1) pendingItems.innerHTML = `You have just ${todoCounter} pending item`;
+      else counterReset()
    }
 }
 
 const counterReset = () => {
    todoCounter = 0;
    pendingItems.innerHTML = `You don'have any pending items, so it's <b style="color:red">time to chill...</b>.`;
+   chill.setAttribute("class", "visible");
 }
 
 const deleteStorage = (id) => {
@@ -136,9 +138,14 @@ document.querySelector('.day').innerHTML = days[date.getDay()];;
 
 /* Displaying completed items */
 
-let completedItemsUpdate = () => {
+const completedItemsUpdate = () => {
    const completedItems = (1 - (todoCounter / localStorage.length));
-   showCompletedItems.innerHTML = (`${Math.round(completedItems * 100)}%`)
+   if (isNaN(completedItems) === true) {
+      showCompletedItems.innerHTML = ""
+   }
+   else {
+      showCompletedItems.innerHTML = (`${Math.round(completedItems * 100)}%`)
+   }
    setTimeout(completedItemsUpdate, 300)
 };
 
